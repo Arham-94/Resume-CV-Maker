@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="cvForm.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>CV Maker</title>
+  </head>
+  <body>
+    <div class="backgroundFull"></div>
+    <div class="blackishShade"></div>
+    <div class="container">
+      <h1 class="neon-text my-5">Resume-CV Maker</h1>
+      <div class="form-preview-container">
+        <div class="form-container">
+          <div class="downloadPreviewBtn">
+            <button
+            class="btn btn-info text-light mb-3"
+            id="open-cv-preview"
+            onclick="previewFunctions()"
+          >
+            Preview <i class="fa-solid fa-eye"></i>
+          </button>
+            <button onclick="downloadCV()" class="btn btn-primary mb-3 ms-2" id="download-btn">
+            Download CV <i class="fa-solid fa-download"></i>
+          </button>
+          </div>
+          <form action="">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Personal Information
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-md-6 col-12 mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          name="name"
+                        />
+                      </div>
+                      <div class="col-md-6 col-12 mb-3">
+                        <label for="headline" class="form-label"
+                          >Headline (main profession)</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="headline"
+                          name="headline"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 col-12 mb-3">
+                        <label for="phone" class="form-label"
+                          >Phone Number</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="phone"
+                          name="phone"
+                          accept="image/png, image/jpeg, image/jpg"
+                        />
+                      </div>
+                      <div class="col-md-4 col-12 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                        />
+                      </div>
+
+                      <div class="col-md-4 col-12 mb-3">
+                        <label for="imageInput" class="form-label">Image</label>
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="imageInput"
+                          name="image"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-12 mb-3">
+                        <label for="website" class="form-label">Website</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="website"
+                          name="website"
+                        />
+                      </div>
+                      <div class="col-md-6 col-12 mb-3">
+                        <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea class="form-control" id="address" rows="3"></textarea>
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="mb-3">
+                          <label for="about" class="form-label">About</label>
+                          <textarea class="form-control" id="about" rows="3"></textarea>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Education
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="education-section" id="education-form-section">
+                      <div class="education-form">
+                        <div class="row">
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Degree Name</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="degree-name[]"
+                            />
+                          </div>
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Date</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="degree-date[]"
+                              placeholder="2022-2025"
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Institude</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="degree-institude[]"
+                            />
+                          </div>
+                          <div class="col-md-6 col-12 mb-3">
+                            <div class="form-floating">
+                              <textarea
+                                class="form-control"
+                                placeholder="small description if any"
+                                name="degree-description[]"
+                              ></textarea>
+                              <label>Description</label>
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                      </div>
+                    </div>
+                    <div
+                      class="btn btn-sm btn-warning"
+                      onclick="addEducationForm()"
+                    >
+                      + Add more
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Experience
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div
+                      class="experience-section"
+                      id="experience-form-section"
+                    >
+                      <div class="experience-form">
+                        <div class="row">
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Post</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="experience-post[]"
+                            />
+                          </div>
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Date</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="experience-date[]"
+                              placeholder="2022-2025"
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Institude</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="experience-institude[]"
+                            />
+                          </div>
+                          <div class="col-md-6 col-12 mb-3">
+                            <div class="form-floating">
+                              <textarea
+                                class="form-control"
+                                placeholder="small description if any"
+                                name="experience-description[]"
+                              ></textarea>
+                              <label>Description</label>
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                      </div>
+                    </div>
+                    <div
+                      class="btn btn-sm btn-warning"
+                      onclick="addExperienceForm()"
+                    >
+                      + Add more
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    Skills
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="skill-section" id="skill-form-section">
+                      <div class="skill-form">
+                        <div class="row">
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Skill</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="skill-name[]"
+                            />
+                          </div>
+                          <div class="col-md-6 col-12 mb-3">
+                            <label class="form-label">Skill Percentage</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="skill-percentage[]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="btn-sm btn btn-warning"
+                      onclick="addSkillForm()"
+                    >
+                      + Add more
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Languages
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="language-section" id="language-form-section">
+                      <div class="language-form">
+                        <div class="row mb-3">
+                          <div class="col-md-6 col-12">
+                            <label class="form-label">Language</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="language-name[]"
+                            />
+                          </div>
+                          <div class="col-md-6 col-12">
+                            <label class="form-label"
+                              >Language Efficiency</label
+                            >
+                            <select
+                              name="language-efficiency[]"
+                              class="form-control"
+                            >
+                              <option value="Basic">Basic</option>
+                              <option value="Converstional">
+                                Converstional
+                              </option>
+                              <option value="Fluent">Fluent</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="btn-sm btn btn-warning"
+                      onclick="addLanguageForm()"
+                    >
+                      + Add more
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    Hobbies
+                  </button>
+                </h2>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSix"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="hobby-section" id="hobby-form-section">
+                      <div class="hobby-form">
+                        <div class="row mb-3">
+                          <div class="col-md-8 col-12">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="hobby-name[]"
+                              placeholder="Reading, Exploring, etc..."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="btn-sm btn btn-warning"
+                      onclick="addHobbyForm()"
+                    >
+                      + Add more
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="preview-container"></div>
+      </div>
+    </div>
+
+    <!-- cv-template -->
+    <div class="preview-cv">
+      <div class="btn btn-danger cross-icon-preview" id="close-cv-preview">
+        Close <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="cv-preview" id="cv-preview">
+        <div class="cv-body">
+          <div class="cv-content row">
+            <div class="left-column">
+              <div class="section image-div">
+                <img id="imagePreview" src="default.png" alt="profile-image" />
+              </div>
+
+              <div class="section personal-details-div">
+                <p class="heading">Personal Info</p>
+                <div class="sub-section">
+                  <p class="content" id="name-preview"></p>
+                </div>
+                <div class="sub-section">
+                  <p class="content" id="phone-preview"></p>
+                </div>
+                <div class="sub-section">
+                  <p class="content" id="email-preview"></p>
+                </div>
+                <div class="sub-section">
+                  <a
+                    class="content text-decoration-none display-block"
+                    id="website-preview"
+                    href=""
+                  ></a>
+                </div>
+                <div class="sub-section">
+                  <p class="content" id="address-preview"></p>
+                </div>
+              </div>
+              <div class="section languages-details">
+                <p class="heading">Skills</p>
+                <ul id="skills-ul"></ul>
+              </div>
+              <div class="section languages-details">
+                <p class="heading">Languages</p>
+                <ul id="language-ul"></ul>
+              </div>
+              <div class="section languages-details">
+                <p class="heading">Hobbies</p>
+                <ul id="hobby-ul"></ul>
+              </div>
+            </div>
+            <div class="right-column">
+              <div class="section">
+                <div class="name" id="big-name"><span>JAMES</span> Bond</div>
+                <div class="headline" id="headline-preview">
+                  Website Development
+                </div>
+              </div>
+              <div class="section mt-5">
+                <p class="heading-right">About Me</p>
+
+                <p id="about-preview"></p>
+              </div>
+
+              <div class="section mt-5">
+                <p class="heading-right">Education</p>
+
+                <div class="education-preview-section"></div>
+              </div>
+
+
+              <div class="section mt-3">
+                <p class="heading-right">Work Experience</p>
+                <div class="experience-preview-section"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="cvForm.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  </body>
+</html>

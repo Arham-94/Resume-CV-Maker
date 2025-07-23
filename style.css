@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cv-body {
+  width: 794px;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.cv-content {
+  height: auto;
+  width: 100%;
+}
+.left-column {
+  height: auto;
+  width: 40%;
+  background-color: #6faa8a;
+  padding: 1rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+
+  color: #ffffff;
+}
+.right-column {
+  height: auto;
+  width: 60%;
+  background-color: #ffffff;
+  padding: 1rem;
+  color: #000;
+}
+
+.section {
+  margin: 0.5rem 0;
+}
+
+/* image */
+
+.image-div {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.image-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* heading */
+
+.preview-cv .heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  border-bottom: 2px solid #fff;
+}
+.heading-right {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  border-bottom: 2px solid;
+}
+.sub-section {
+  margin: 0;
+}
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+.content {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 0;
+}
+.left-column ul {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.name span {
+  font-weight: 800;
+  color: #6faa8a;
+}
+.headline {
+  display: inline;
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+}
+.headline::after {
+  content: "";
+  height: 5px;
+  width: 40%;
+  background-color: #6faa8a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.education-item{
+  margin-bottom: .5rem;
+}
+
+.edu-year {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-left: 1.2rem;
+}
+
+.edu-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.edu-detail {
+  font-size: 0.95rem;
+  margin-left: 1.2rem;
+}
+
+.job-company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom : 0.4rem;
+}
+
+.job-position {
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  margin-bottom : .4rem;
+}
+
+.job-item ul {
+  font-size: 0.95rem;
+  padding-left: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .cv-preview {
+    overflow: hidden;
+  }
+  
+
+  .cv-body {
+    transform: scale(0.5); /* Adjust size */
+    transform-origin: top left;
+    width: 794px; /* A4 */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .headline {
+    font-size: 1.5rem;
+  }
+
+  .heading,
+  .heading-right {
+    font-size: 1.2rem;
+  }
+
+  .sub-heading,
+  .content,
+  .left-column ul,
+  .edu-year,
+  .edu-title,
+  .edu-detail,
+  .job-company,
+  .job-position,
+  .job-item ul {
+    font-size: 0.85rem;
+  }
+  .edu-detail{
+    max-width: 70%;
+  }
+  .job-company {
+    justify-content: flex-start !important;
+    gap: 20px;
+
+  }
+  .job-company i{
+    display: none;
+  }
+  .left-column,
+  .right-column {
+    padding: 1rem 2rem;
+  }
+
+  .image-div {
+    height: 7rem;
+    width: 7rem;
+  }
+  .exp-desc{
+    max-width: 70%;
+    font-size: 0.85rem;
+  }
+}

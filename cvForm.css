@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 1rem 0;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+.backgroundFull {
+  height: 100dvh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url("https://cdn.pixabay.com/photo/2020/07/10/19/56/clipboard-5391969_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -123;
+}
+.backgroundFull::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+}
+.blackishShade {
+  height: 100dvh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+.page-heading {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px rgb(0, 208, 255);
+  margin-bottom: 40px;
+}
+
+.neon-text {
+  font-size: 2.5rem;
+  font-family: "Boldonse", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 0 20px #000;
+
+  letter-spacing: 1px;
+}
+
+.form-preview-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  width: 90%;
+}
+.preview-cv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 123;
+  padding: 3rem 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.downloadPreviewBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cross-icon-preview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .form-container {
+    width: 100%;
+  }
+  .preview-container {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
